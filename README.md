@@ -41,3 +41,4 @@ ActivityManager: Permission Denial: opening provider ... (pid=31432, uid=10042) 
 权限丢失，导致文件数据没有传到第三方应用
 只需要给Intent  addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
 给intent附上需要的读或写权限，就可以解决大部分Permission Denial
+详见文章：http://blog.csdn.net/lmj623565791/article/details/72859156?utm_source=gold_browser_extension
