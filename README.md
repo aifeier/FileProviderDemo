@@ -35,3 +35,9 @@ name可以随便写，只是个标识
         }
         
 Demo里写了安装apk和打开图库的例子，需要的可以参考下
+
+调用第三方应用的时候即设置action为Intent.ACTION_VIEW，startActivity会出现
+ActivityManager: Permission Denial: opening provider ... (pid=31432, uid=10042) that is not exported from uid 10051
+权限丢失，导致文件数据没有传到第三方应用
+只需要给Intent  addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+给intent附上需要的读或写权限，就可以解决大部分Permission Denial
